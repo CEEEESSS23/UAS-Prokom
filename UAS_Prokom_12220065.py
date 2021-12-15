@@ -16,9 +16,10 @@ df = pd.read_csv(
 
 #A
 listnama_negara = []
-for i in data:
-    nama_negara = str(i["name"])
-    listnama_negara.append(nama_negara)
+for i in list(df['kode_negara']):
+    for j in data:
+        if i == str(i["alpha-3"]):
+            listnama_negara.append(str(i["name"]))
     
 n_negara = st.selectbox(
     "Negara apa yang ingin anda ketahui produksinya: ", listnama_negara)
