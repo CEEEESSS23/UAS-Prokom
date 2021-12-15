@@ -145,9 +145,9 @@ for i in bahan_dfnew:
 st.write('Total produksi :' + str(terbesar_kumulatif.iloc[0, 1]))
 
 # Produksi Terbesar Spasial
-B3 = st.number_input("Tahun produksi yang ingin dicari", 1971, key="wow")
-st.info("Negara produksi Minyak Terbesar pada tahun " + str(B3))
-terbesar_spasial = df.loc[df["tahun"] == B3]
+cari = st.number_input("Tahun produksi yang ingin dicari", 1971, key="wow")
+st.info("Negara produksi Minyak Terbesar pada tahun " + str(cari))
+terbesar_spasial = df.loc[df["tahun"] == cari]
 terbesar_spasial = terbesar_spasial.loc[terbesar_spasial["produksi"] > 0]
 terbesar_spasial = terbesar_spasial.sort_values(by='produksi', ascending=False)
 terbesar_spasial = terbesar_spasial[:1]
@@ -180,9 +180,9 @@ for i in bahan_dfnew:
 st.write('Total produksi :' + str(terkecil_kumulatif.iloc[0, 1]))
 
 # Produksi Terkecil Spasial
-st.info("Negara Produksi Minyak Terkecil pada tahun " + str(B3))
+st.info("Negara Produksi Minyak Terkecil pada tahun " + str(cari))
 terkecil_spasial = df.loc[df["produksi"] > 0]
-terkecil_spasial = terkecil_spasial.loc[df["tahun"] == B3]
+terkecil_spasial = terkecil_spasial.loc[df["tahun"] == cari]
 terkecil_spasial = terkecil_spasial.sort_values(by='produksi', ascending=True)
 terkecil_spasial = terkecil_spasial[:1]
 terkecil_spasial = terkecil_spasial[['kode_negara', 'produksi']]
@@ -212,9 +212,9 @@ nol_kumulatif1 = pd.DataFrame(kumpulan, columns=[
 st.table(nol_kumulatif1)
 
 # Tidak ada produksi per tahun input
-st.info(" Negara yang Tidak Memproduksi Minyak Pada Tahun " + str(B3))
+st.info(" Negara yang Tidak Memproduksi Minyak Pada Tahun " + str(cari))
 nol_spasial = df.loc[df["produksi"] == 0]
-nol_spasial = nol_spasial.loc[nol_spasial["tahun"] == B3]
+nol_spasial = nol_spasial.loc[nol_spasial["tahun"] == cari]
 list_n = nol_spasial['kode_negara'].tolist()
 kumpulan = []
 for c in list_n:
