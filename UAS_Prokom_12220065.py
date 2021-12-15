@@ -47,7 +47,7 @@ st.pyplot(fig1)
 # Notes : n --> jumlah negara ,  t --> timeframe yang diinginkan
 n = st.number_input(
     "Masukkan jumlah negara yang ingin anda periksa: ", min_value=1)
-t = st.number_input("Pada tahun berapaa nih pengen diliatnya: ", min_value=1)
+t = st.number_input("Pada tahun berapaa nih pengen diliatnya: ", min_value=1971)
 
 # ide nya : sorting berdasarkan tahun dulu nanti baru berdasarkan jumlah
 # x --> total produksi
@@ -74,7 +74,7 @@ lst = list(data_items)
 dfakhir = pd.DataFrame(data=lst, columns=['kode_negara', 'produksi'])
 # sorting value
 data_new2 = dfakhir.sort_values(["produksi"], ascending=[0])
-data_new3 = data_new2[1:int(n) + 1]
+data_new3 = data_new2[1:int(n)]
 
 fig2, ax = plt.subplots()
 data_new3.plot.bar(x='kode_negara', y='produksi', rot=15, title="Grafik " + str(n) +
@@ -110,7 +110,7 @@ for i in data:
 
     # sorting value
 data_new2 = df_new.sort_values(["produksi"], ascending=[0])
-data_new3 = data_new2[1:int(Jumlah_Negara) + 1]
+data_new3 = data_new2[1:int(Jumlah_Negara)]
 
 data_new3.plot(x='kode_negara', y='produksi', title="Grafik negara dengan produksi terbesar secara kumulatif ",
                grid=True, xlabel=" kode negara ", ylabel=" Total Produksi ", kind="bar")
@@ -145,7 +145,7 @@ for i in bahan_dfnew:
 st.write('Total produksi :' + str(terbesar_kumulatif.iloc[0, 1]))
 
 # Produksi Terbesar Spasial
-B3 = st.number_input("Tahun produksi yang ingin dicari", 2000, key="biga")
+B3 = st.number_input("Tahun produksi yang ingin dicari", 1971, key="wow")
 st.info("Negara produksi Minyak Terbesar pada tahun " + str(B3))
 terbesar_spasial = df.loc[df["tahun"] == B3]
 terbesar_spasial = terbesar_spasial.loc[terbesar_spasial["produksi"] > 0]
