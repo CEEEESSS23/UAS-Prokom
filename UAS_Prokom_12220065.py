@@ -16,7 +16,7 @@ df = pd.read_csv(
 
 st.set_page_config(page_title='Data Produksi Minyak', layout='wide', page_icon=':fire:')
 st.markdown('<p style="font-family: sans-serif; font-size: 40px;"><b>Data Produksi Minyak</b></p>', unsafe_allow_html = True)
-st.markdown('<p style="font-family: sans-serif; font-size: 10px;">Mochamad Ricki Andriansyah/12220065</p>', unsafe_allow_html = True)
+st.markdown('<p style="font-family: sans-serif; font-size: 20px;">Mochamad Ricki Andriansyah/12220065</p>', unsafe_allow_html = True)
 #A
 listnama_negara = []
 for i in list(df['kode_negara']):
