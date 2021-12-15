@@ -2,6 +2,7 @@ import json
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
+from PIL import image 
 
 #Mochamad Ricki Andriansyah
 #12220065
@@ -14,9 +15,15 @@ data = json.load(f)
 df = pd.read_csv(
     "produksi_minyak_mentah.csv")
 
-st.set_page_config(page_title='Data Produksi Minyak', layout='wide', page_icon=':fire:')
-st.markdown('<p style="font-family: sans-serif; font-size: 40px;"><b>Data Produksi Minyak</b></p>', unsafe_allow_html = True)
-st.markdown('<p style="font-family: sans-serif; font-size: 20px;">Mochamad Ricki Andriansyah/12220065</p>', unsafe_allow_html = True)
+image = Image.open('ITB_LOGO.png')
+with title_container:
+    with col1:
+        st.markdown('<p style="font-family: sans-serif; font-size: 20px; text-align: center;"><b>Mochamad Ricki Andriansyah/12220065</b></p>', unsafe_allow_html=True)
+        st.markdown('<h2>Data Produksi Minyak Mentah</h2>',
+                    unsafe_allow_html=True)
+    with col2:
+        st.image(image,width=120)
+
 #A
 listnama_negara = []
 for i in list(df['kode_negara']):
