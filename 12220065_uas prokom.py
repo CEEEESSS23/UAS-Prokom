@@ -8,11 +8,11 @@ import streamlit as st
 #UAS PROKOM 2021
 
 # Open JSON
-f = open("D:\Prokom\kode_negara_lengkap.json")
+f = open("kode_negara_lengkap.json")
 data = json.load(f)
 # Open Excel
 df = pd.read_csv(
-    "D:\Prokom\produksi_minyak_mentah.csv")
+    "produksi_minyak_mentah.csv")
 
 #A
 n_negara = st.text_input(
