@@ -15,13 +15,19 @@ df = pd.read_csv(
     "produksi_minyak_mentah.csv")
 
 #A
-n_negara = st.text_input(
-    "Negara apa yang ingin anda ketahui produksinya: ", value="Australia")
+listnama_negara = []
+for i in data:
+    nama_negara = str(i["name"])
+    listnama_negara.append(nama_negara)
+    
+n_negara = st.selectbox(
+    "Negara apa yang ingin anda ketahui produksinya: ", listnama_negara)
 
 x = dict()
 for i in data:
     nama_negara = str(i["name"])
     kode_negara = str(i["alpha-3"])
+    listnama_negara.append(nama_negara)
 
     x[nama_negara] = kode_negara
 
