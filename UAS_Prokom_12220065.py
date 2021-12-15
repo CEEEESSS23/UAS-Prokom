@@ -74,7 +74,7 @@ lst = list(data_items)
 dfakhir = pd.DataFrame(data=lst, columns=['kode_negara', 'produksi'])
 # sorting value
 data_new2 = dfakhir.sort_values(["produksi"], ascending=[0])
-data_new3 = data_new2[1:int(n)]
+data_new3 = data_new2[0:int(n)]
 
 fig2, ax = plt.subplots()
 data_new3.plot.bar(x='kode_negara', y='produksi', rot=15, title="Grafik " + str(n) +
@@ -110,7 +110,7 @@ for i in data:
 
     # sorting value
 data_new2 = df_new.sort_values(["produksi"], ascending=[0])
-data_new3 = data_new2[1:int(Jumlah_Negara)]
+data_new3 = data_new2[0:int(Jumlah_Negara)]
 
 data_new3.plot(x='kode_negara', y='produksi', title="Grafik negara dengan produksi terbesar secara kumulatif ",
                grid=True, xlabel=" kode negara ", ylabel=" Total Produksi ", kind="bar")
