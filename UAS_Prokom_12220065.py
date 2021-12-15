@@ -19,7 +19,8 @@ listnama_negara = []
 for i in list(df['kode_negara']):
     for j in data:
         if i == str(j["alpha-3"]):
-            listnama_negara.append(str(j["name"]))
+            if str(j["name"]) not in listnama_negara:
+                listnama_negara.append(str(j["name"]))
     
 n_negara = st.selectbox(
     "Negara apa yang ingin anda ketahui produksinya: ", listnama_negara)
